@@ -24,7 +24,7 @@
 
 <body>
     <div id="details"></div>
-    
+    <div id="map"></div>    
     
 </body>
 </html>
@@ -56,7 +56,8 @@
         var lat = position.coords.latitude
         var long = position.coords.longitude
         var accuracy = position.coords.accuracy
-        var spe = position.coords.speed
+        var spe = 0
+        spe = position.coords.speed
 
         if(marker) {
             map.removeLayer(marker)
@@ -75,7 +76,7 @@
 
         console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy+"speed"+spe)
         details.innerHTML="accuracy "+accuracy+"<br>";
-        details.innerHTML="latitude " +lat+"  |longitude "+long+"<br>";
+        details.innerHTML+="latitude " +lat+"  |longitude "+long+"<br>";
         
         details.innerHTML="speed " +spe+"<br>";
         
